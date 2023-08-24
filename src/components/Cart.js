@@ -13,7 +13,10 @@ const Cart = () => {
 
   // Calculate the total bill, GST, and taxes
   const subtotal = cartItems.reduce(
-    (total, item) => total + item.itemPrice * item.itemCount,
+    (total, item) =>
+      item.itemPrice
+        ? total + item.itemPrice * item.itemCount
+        : total + 200 * item.itemCount,
     0
   );
   const gstAmount = subtotal * gstRate;
