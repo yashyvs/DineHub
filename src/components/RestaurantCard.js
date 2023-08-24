@@ -5,14 +5,12 @@ const RestaurantCard = ({
   cloudinaryImageId,
   cuisines,
   costForTwo,
-  veg,
   avgRating,
-  lastMileTravelString,
 }) => {
   return (
     <div className="p-4 w-72 flex flex-col hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-md">
       <p className="w-fit mt-2 py-1 px-2 bg-accent text-xs font-primary text-dark">
-        {avgRating}
+        {avgRating ? avgRating + " ⭐" : "- ⭐"}
       </p>
       <img
         className="shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
@@ -27,15 +25,7 @@ const RestaurantCard = ({
       </p>
       <div className="mt-2 flex justify-between items-center">
         <p className="text-sm font-secondary italic font-bold text-dark">
-          {"₹ " + costForTwo / 100 + " for two"}
-        </p>
-        <p className="text-sm font-secondary text-dark">|</p>
-        <p className="text-sm font-secondary text-dark">
-          {veg ? "Veg" : "Non-Veg"}
-        </p>
-        <p className="text-sm font-secondary text-dark">|</p>
-        <p className="text-sm font-secondary italic font-bold text-dark">
-          {lastMileTravelString}
+          {costForTwo}
         </p>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { addItem, removeItem } from "../utils/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import { ITEM_IMG_CDN_URL } from "../config";
+import fastfoodPng from "../assets/fast-food.png";
 
 const MenuItemsCard = (props) => {
   const dispatch = useDispatch();
@@ -40,14 +41,17 @@ const MenuItemsCard = (props) => {
         )}
         <p className="mt-1 font-secondary font-bold text-sm">
           {info?.ratings?.aggregatedRating?.rating
-            ? +info?.ratings?.aggregatedRating?.rating
-            : "--"}
+            ? +info?.ratings?.aggregatedRating?.rating + " ⭐"
+            : "- ⭐"}
         </p>
       </div>
-
       <img
         className="h-20 w-28 rounded-lg"
-        src={ITEM_IMG_CDN_URL + info?.imageId}
+        src={
+          info?.imageId
+            ? ITEM_IMG_CDN_URL + info?.imageId
+            : fastfoodPng
+        }
         alt="Menu item"
       />
       <div className="w-16 m-2 bg-accent shadow-lg rounded-sm">

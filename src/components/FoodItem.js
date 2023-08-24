@@ -2,7 +2,6 @@ import { ITEM_IMG_CDN_URL } from "../config";
 import { Link } from "react-router-dom";
 
 const FoodItem = ({ item }) => {
-  console.log(item);
   return (
     <div className="w-full mt-2 p-2 flex justify-between items-center gap-4 hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
       <div className="w-full">

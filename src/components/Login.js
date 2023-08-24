@@ -35,7 +35,7 @@ const Login = () => {
           </Link>
         </div>
 
-        <div className="h-full w-full flex justify-center items-center">
+        <div className="bg-orange-100 h-full w-full flex justify-center items-center">
           {isUser ? (
             <div className="w-1/2 p-4 flex flex-col justify-center items-center">
               <input

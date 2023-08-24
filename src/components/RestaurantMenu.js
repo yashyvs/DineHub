@@ -29,7 +29,7 @@ const RestaurantMenu = () => {
 
   return (
     <>
-      <div className="px-[10%] py-4 mt-4 flex justify-between items-start gap-8">
+      <div className="bg-orange-50 px-[10%] py-4 flex justify-between items-start gap-8">
         <div className="w-2/5">
           <h1 className="pt-2 font-bold font-primary text-2xl">
             {restaurant?.name}
@@ -46,7 +46,7 @@ const RestaurantMenu = () => {
             </p>
             <p className="p-2 font-bold font-secondary text-dark text-sm">|</p>
             <p className="py-1 px-2 flex justify-center items-center bg-accent font-bold font-secondary text-dark text-sm">
-              {restaurant?.avgRating ? restaurant?.avgRating : "--"}
+              {restaurant?.avgRating ? restaurant?.avgRating + " ⭐" : "- ⭐"}
             </p>
             <p className="p-2 font-bold font-secondary text-dark text-sm">|</p>
             <p className="p-2 font-bold font-secondary text-dark text-sm">

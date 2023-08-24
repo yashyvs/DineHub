@@ -16,9 +16,11 @@ const Body = () => {
   async function getRestaurants() {
     const data = await fetch(swiggy_api_URL);
     const json = await data.json();
-
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    console.log(json);
+    setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants);
+    setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants);
   }
 
   if (!allRestaurants) return null;
@@ -48,12 +50,13 @@ const Body = () => {
 
       <div className="min-h-screen p-4 flex flex-wrap justify-around gap-4">
         {filteredRestaurants.map((restaurant) => {
+          
           return (
             <Link
-              to={"/restaurant/" + restaurant?.data?.id}
-              key={restaurant?.data?.id}
+              to={"/restaurant/" + restaurant?.info?.id}
+              key={restaurant?.info?.id}
             >
-              <RestaurantCard {...restaurant?.data} />
+              <RestaurantCard {...restaurant.info} />
             </Link>
           );
         })}

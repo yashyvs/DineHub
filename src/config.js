@@ -5,7 +5,7 @@ export const ITEM_IMG_CDN_URL =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
 export const swiggy_api_URL =
-  "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7030425&lng=77.430373&page_type=DESKTOP_WEB_LISTING";
+  "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.704419&lng=77.086764&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
 export const swiggy_menu_api_URL =
   "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7030425&lng=77.430373&&submitAction=ENTER&restaurantId=";
