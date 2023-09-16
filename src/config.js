@@ -15,3 +15,7 @@ export const MENU_ITEM_TYPE_KEY =
 
 export const RESTAURANT_TYPE_KEY =
   "type.googleapis.com/swiggy.presentation.food.v2.Restaurant";
+
+export const BODY_SHIMMER_VALUE = 6;
+
+export const MENU_SHIMMER_VALUE = 4;

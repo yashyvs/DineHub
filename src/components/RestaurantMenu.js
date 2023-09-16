@@ -7,7 +7,7 @@ import {
 import useResMenuData from "../Hooks/useRestaurantMenu";
 import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
-
+import MenuShimmer from "./MenuShimmer";
 import MenuItemsCard from "./MenuItemsCard";
 
 const RestaurantMenu = () => {
@@ -26,8 +26,10 @@ const RestaurantMenu = () => {
   const addFoodItem = (item) => {
     dispatch(addItem(item));
   };
-
-  return (
+  
+  return !restaurant || !menuItems ? (
+    <MenuShimmer />
+  ) : (
     <>
       <div className="bg-orange-50 px-[10%] py-4 flex justify-between items-start gap-8">
         <div className="w-2/5">

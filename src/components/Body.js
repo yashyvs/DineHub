@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { Link } from "react-router-dom";
 import { swiggy_api_URL } from "../config";
 import { filterData } from "../utils/helper";
+import BodyShimmer from "./BodyShimmer";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -17,10 +18,12 @@ const Body = () => {
     const data = await fetch(swiggy_api_URL);
     const json = await data.json();
     console.log(json);
-    setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants);
-    setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants);
+    setAllRestaurants(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurants(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   }
 
   if (!allRestaurants) return null;
@@ -49,17 +52,20 @@ const Body = () => {
       </div>
 
       <div className="min-h-screen p-4 flex flex-wrap justify-around gap-4">
-        {filteredRestaurants.map((restaurant) => {
-          
-          return (
-            <Link
-              to={"/restaurant/" + restaurant?.info?.id}
-              key={restaurant?.info?.id}
-            >
-              <RestaurantCard {...restaurant.info} />
-            </Link>
-          );
-        })}
+        {filteredRestaurants.length === 0 ? (
+          <BodyShimmer />
+        ) : (
+          filteredRestaurants.map((restaurant) => {
+            return (
+              <Link
+                to={"/restaurant/" + restaurant?.info?.id}
+                key={restaurant?.info?.id}
+              >
+                <RestaurantCard {...restaurant.info} />
+              </Link>
+            );
+          })
+        )}
       </div>
     </div>
   );
