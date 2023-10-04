@@ -1,19 +1,19 @@
 const Footer = () => {
   return (
-    <div className="px-[10%] py-20 flex flex-wrap justify-between items-center bg-primary">
-      <div className="w-1/2">
+    <div className="px-4 sm:px-[10%] py-10 sm:py-20 flex flex-wrap sm:justify-between items-center bg-primary">
+      <div className="w-full sm:w-1/2 mb-8 sm:mb-0">
         <h1 className="mb-4 font-primary text-2xl font-extrabold">DineHub</h1>
-        <p className="text-6xl font-bold font-primary text-white">
+        <p className="text-4xl sm:text-6xl font-bold font-primary text-white">
           Delivering deliciousness to your doorstep.
         </p>
-        <p className="mb-4 text-lg font-secondary text-light">
-          Order food from your nearby favourite restaurants.
+        <p className="mb-4 text-lg sm:text-base font-secondary text-light">
+          Order food from your nearby favorite restaurants.
         </p>
       </div>
 
-      <div className="w-1/2 flex justify-between gap-2">
-        <ul>
-          <li className="mb-4 font-bold text-lg font-secondary text-light">
+      <div className="w-full sm:w-1/2 flex flex-wrap sm:flex-nowrap justify-between gap-4 sm:gap-2">
+        <ul className="w-1/2 sm:w-auto">
+          <li className="mb-4 font-bold text-lg sm:text-base font-secondary text-light">
             Company
           </li>
           <li className="mt-2 font-secondary text-base text-white cursor-pointer hover:opacity-80">
@@ -35,8 +35,8 @@ const Footer = () => {
             Dine Instamart
           </li>
         </ul>
-        <ul>
-          <li className="mb-4 font-bold text-lg font-secondary text-light">
+        <ul className="w-1/2 sm:w-auto">
+          <li className="mb-4 font-bold text-lg sm:text-base font-secondary text-light">
             Contact
           </li>
           <li className="mt-2 font-secondary text-base text-white cursor-pointer hover:opacity-80">
@@ -49,8 +49,8 @@ const Footer = () => {
             Ride with Dine
           </li>
         </ul>
-        <ul>
-          <li className="mb-4 font-bold text-lg font-secondary text-light">
+        <ul className="w-1/2 sm:w-auto">
+          <li className="mb-4 font-bold text-lg sm:text-base font-secondary text-light">
             Legal
           </li>
           <li className="mt-2 font-secondary text-base text-white cursor-pointer hover:opacity-80">
@@ -70,8 +70,6 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-
-      <div className="py-4 flex gap-4"></div>
     </div>
   );
 };
